@@ -13,7 +13,8 @@ import {
   MatSidenavModule,
   MatIconModule,
   MatListModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+  MatInputModule
 } from '@angular/material';
 
 @NgModule({
@@ -29,7 +30,8 @@ import {
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
