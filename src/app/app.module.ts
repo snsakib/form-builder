@@ -12,7 +12,8 @@ import {
   MatButtonModule,
   MatSidenavModule,
   MatIconModule,
-  MatListModule
+  MatListModule,
+  MatFormFieldModule
 } from '@angular/material';
 
 @NgModule({
@@ -22,11 +23,13 @@ import {
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
