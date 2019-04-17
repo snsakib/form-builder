@@ -1,20 +1,39 @@
-import { Component } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-main-nav',
   templateUrl: './main-nav.component.html',
-  styleUrls: ['./main-nav.component.css']
+  styleUrls: ['./main-nav.component.scss']
 })
-export class MainNavComponent {
+export class MainNavComponent implements OnInit {
+  // Sets the menu links
+  pages = [
+    {
+      routerLink: '/about',
+      linkText: 'About'
+    },
+    {
+      routerLink: '/contact',
+      linkText: 'Contact'
+    }
+  ];
 
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches)
-    );
+  // If the width of screen is equals or greather than 1024px, the value of the property becomes true.
+  isLaptop: boolean;
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  // Checks the window width & sets the 'isLaptop' property value
+  @HostListener('window:resize')
+  onResize() {
+    if (window.innerWidth < 1024) {
+      this.isLaptop = false;
+    } else {
+      this.isLaptop = true;
+    }
+  }
 
+  constructor() {}
+
+  ngOnInit() {
+    this.onResize();
+  }
 }

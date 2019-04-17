@@ -1,27 +1,58 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="!(isHandset$ | async)">
-    <mat-toolbar>Menu</mat-toolbar>
+<mat-sidenav-container
+  class="sidenav-container"
+  (swiperight)="drawer.open()"
+  (swipeleft)="drawer.close()"
+>
+  <!-- Menu -->
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    role="navigation"
+    mode="over"
+    opened="false"
+  >
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a
+        *ngFor="let page of pages"
+        mat-list-item
+        routerLink="{{ page.routerLink }}"
+        routerLinkActive="active"
+        (click)="drawer.toggle()"
+        class="nav-link"
+        ><span>{{ page.linkText }}</span></a
+      >
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <!-- Navbar -->
+    <mat-toolbar>
       <button
         type="button"
         aria-label="Toggle sidenav"
-        mat-icon-button
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        *ngIf="isLaptop ? false : true"
+        id="menuIcon"
+      >
+        <!-- menu icon -->
+        &#9776;
       </button>
-      <span>form-builder</span>
+      <h1>Form Builder</h1>
+      <mat-nav-list *ngIf="isLaptop">
+        <a
+          *ngFor="let page of pages"
+          mat-list-item
+          routerLink="{{ page.routerLink }}"
+          routerLinkActive="active"
+          class="nav-link"
+          ><span>{{ page.linkText }}</span>
+        </a>
+      </mat-nav-list>
     </mat-toolbar>
-    <!-- Add Content Here -->
+
+    <!-- router outlet -->
+    <!-- <div id="router-outlet-container">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div> -->
   </mat-sidenav-content>
 </mat-sidenav-container>

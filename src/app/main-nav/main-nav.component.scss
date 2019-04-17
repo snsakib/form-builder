@@ -1,0 +1,115 @@
+.sidenav-container {
+  height: 100vh;
+
+  .nav-link {
+    color: #bfbfbf;
+    font-size: 1.25rem;
+
+    &.active,
+    &:hover {
+      span {
+        background-image: -webkit-gradient(
+          linear,
+          left top, right bottom,
+          from(#f9d423),
+          to(#f83600)
+        );
+        background-image: linear-gradient(
+          to bottom right,
+          #f9d423 0%,
+          #f83600 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+    }
+  }
+
+  .sidenav {
+    width: 15.625rem; // 250px
+    background-color: #0b0d0e;
+
+    mat-toolbar {
+      background-color: #0b0d0e;
+      padding-left: 3rem;
+      svg {
+        width: 2.1875rem;
+        height: 2.1875rem;
+      }
+    }
+
+    mat-nav-list {
+      margin-top: 64px;
+
+      .nav-link {
+        padding-left: 2rem;
+      }
+    }
+  }
+
+  mat-sidenav-content {
+    background-color: #0b0d0e;
+
+    mat-toolbar {
+      padding: 0 20px;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      height: 64px;
+      z-index: 1;
+      background-color: #0b0d0e;
+      color: #0b0d0e;
+
+      @media screen and (min-width: 576px) {
+        padding: 0 50px;
+      }
+
+      @media screen and (min-width: 1024px) {
+        padding: 0 200px;
+      }
+      #menuIcon {
+        background-color: #0b0d0e;
+        margin-right: 1.25rem;
+        padding: 0.625rem;
+        color: #bfbfbf;
+        font-size: 1.875rem;
+        border: none;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      h1 {
+        font-size: 1.8rem;
+        background-image: -webkit-gradient(
+          linear,
+          left top, right bottom,
+          from(#f9d423),
+          to(#f83600)
+        );
+        background-image: linear-gradient(
+          to bottom right,
+          #f9d423 0%,
+          #f83600 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      mat-nav-list {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 0;
+        margin-left: auto;
+      }
+    }
+
+    #router-outlet-container {
+      position: relative;
+    }
+  }
+}
