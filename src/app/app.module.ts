@@ -16,9 +16,10 @@ import {
   MatInputModule
 } from '@angular/material';
 import { HeaderComponent } from './header/header.component';
+import { FormBuilderComponent } from './form-builder/form-builder.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent, FormBuilderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
