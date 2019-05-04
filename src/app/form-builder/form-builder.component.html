@@ -1,8 +1,17 @@
-<mat-drawer-container>
-  <mat-drawer mode="side" opened>
-    mat-drawer
-  </mat-drawer>
-  <mat-drawer-content>
-    mat-drawer-content
-  </mat-drawer-content>
-</mat-drawer-container>
+<mat-sidenav-container class="form-builder-container">
+  <mat-sidenav mode="side" opened class="input-elements">
+    <mat-toolbar>
+      Input Elements
+    </mat-toolbar>
+    <mat-list role="list">
+      <mat-list-item role="listitem">Text</mat-list-item>
+      <mat-list-item role="listitem">Email</mat-list-item>
+      <mat-list-item role="listitem">Password</mat-list-item>
+      <mat-list-item role="listitem">Textarea</mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="form-builder">
+    <p>Click the desired "Input Element" to add it inside the box</p>
+    <section class="form-layout"></section>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,29 @@
+.form-builder-container {
+  // border: 1px solid black;
+  min-height: calc(100vh - 64px);
+}
+
+.input-elements {
+  // border: 1px solid red;
+  width: 250px;
+}
+
+.form-builder {
+  // border: 1px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  .form-layout {
+    border: 2px solid gray;
+    width: 60%;
+    min-height: 200px;
+  }
+}
