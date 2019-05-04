@@ -15,9 +15,10 @@ import {
   MatFormFieldModule,
   MatInputModule
 } from '@angular/material';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
